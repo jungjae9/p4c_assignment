@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            width : 500px;
+        }
+        textarea{
+            width : 600px;
+            height : 500px;
+        }
+        input[type="radio"]{
+            vertical-align:center;
+            width:15px;
+        }
+        
+    </style>
+    <title>새 글 쓰기</title>
+</head>
+<body>
+    <h1 align = "center">새 글 작성</h1>
+    <center>
+    <form action="/create" method="post" enctype=multipart/form-data>
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title"/><br/>
+        <label for="content">내용:</label><br/>
+        <textarea id="content" name="content" width = '500px'> </textarea><br/>
+        <label for="file">파일업로드:</label>
+        <input type="file" id="file" name="file"/><br/>
+        <div>
+            <input type="radio" name="is_secret" id="is_secret" value="1">
+            <label for="is_secret">비밀글로 설정</label>
+            <input type="radio" name="is_secret" id="public" value="0" checked="checked">
+            <label for="public">공개글로 설정</label>
+            
+        </div>
+        <button type="submit">작성</button>
+    </form>
+    </center>
+
+    
+</body>
+</html>

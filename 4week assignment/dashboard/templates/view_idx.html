@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{post[0]}}번째 게시글</title>
+</head>
+<body>
+    <h1 align='center'>{{post[1]}}</h1>
+    <p align= 'center'>{{post[2]}}</p>
+    {%if current_user.id == post[6]%}
+    <div align = 'right'>
+        <a href='/{{post[0]}}/update'><button>글 수정하기</button></a>
+    </div>
+    
+    <a href='{{post[0]}}/delete'><button>삭제</button></a>
+    {%endif%}
+    {%if post[5]%}
+    <a href='/download/{{post[5]}}'><button>파일 다운로드</button></a>
+    {{post[5]}}
+    {%endif%}
+    <div align='right'>
+        <a href='/'><button>돌아가기</button></a>
+    </div>
+</body>
+</html>
